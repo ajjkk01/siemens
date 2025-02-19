@@ -26,6 +26,10 @@ padding: 0;
 margin: 0;
 }
 
+p,h2,div {
+	transition : all 1s ease;
+}
+
 .text-center{
 	text-align: center;
 }
@@ -134,12 +138,36 @@ h3 {
 	font-size: 2.4rem;
 }
 
-.hide {
-	display: none;
+.normal {
+    transition: opacity 1s ease-in-out, height 1s ease-in-out, margin 1s ease-in-out;
 }
 
+.horror {
+    opacity: 1;
+    visibility: visible;
+}
+
+.normal.hide {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    overflow: hidden; /* 내부 컨텐츠가 줄어들면서 사라지도록 함 */
+}
+
+.horror.show {
+    opacity: 1;
+}
+
+.horror.hide {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+
+
 ul {
-	    line-height: 1.6;
+	line-height: 1.6;
     margin-top: 2rem;
 }
 
